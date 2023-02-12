@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">PortfolioAndroid</string>
+
+    <string name="screen_takeawaytracker_notification_title">Please book today\'s takeway</string>
+    <string name="screen_takeawaytracker_book_input_what_label">What:</string>
+    <string name="screen_takeawaytracker_book_input_price_label">Price:</string>
+    <string name="screen_takeawaytracker_book_input_price_error">Invalid Price!</string>
+    <string name="screen_takeawaytracker_book_button_book">Book</string>
+
 </resources>

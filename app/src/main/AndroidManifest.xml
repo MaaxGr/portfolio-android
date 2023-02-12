@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,7 +16,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PortfolioAndroid"
+        android:name=".app.userinterface.PortfolioApplication"
         tools:targetApi="31">
+
+        <receiver
+            android:name=".app.userinterface.screens.takeawaytracker.TakeAwayTrackerService"
+            android:enabled="true" />
+
+        <receiver android:name=".app.userinterface.screens.takeawaytracker.TakeAwayTrackerRebootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".app.userinterface.MainActivity"
             android:exported="true"
@@ -19,7 +40,6 @@
             android:theme="@style/Theme.PortfolioAndroid">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -27,6 +47,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <service android:name=".app.userinterface.screens.timer.TimerService" />
+
     </application>
 
 </manifest>

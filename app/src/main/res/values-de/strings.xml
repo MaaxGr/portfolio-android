@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PortfolioAndroid</string>
+    <string name="screen_takeawaytracker_notification_title">Bitte heutiges Essen buchen</string>
+    <string name="screen_takeawaytracker_book_input_what_label">Was:</string>
+    <string name="screen_takeawaytracker_book_input_price_label">Preis:</string>
+    <string name="screen_takeawaytracker_book_input_price_error">Ungültiger Preis!</string>
+    <string name="screen_takeawaytracker_book_button_book">Buchen</string>
+
+</resources>
